@@ -1,0 +1,4 @@
+<%- include('_header', { title: 'Mi perfil' }) %>
+<section class="page-heading"><div><div class="eyebrow">CUENTA</div><h1>Mi perfil</h1><p class="muted">Los datos sensibles se cifran y se muestran enmascarados.</p></div></section>
+<section class="form-card wide"><dl class="profile"><dt>Nombre</dt><dd><%= currentUser.name %></dd><dt>Correo</dt><dd><%= currentUser.email %></dd><dt>Dato guardado</dt><dd><%= masked %></dd></dl><form method="post" action="/profile" class="stack"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><label>Teléfono o documento sensible<input name="sensitive" maxlength="100" autocomplete="off"></label><p class="muted">Al dejar el campo vacío se elimina el dato guardado.</p><button class="button" type="submit">Cifrar y guardar</button></form></section>
+<%- include('_footer') %>

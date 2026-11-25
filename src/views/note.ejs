@@ -1,0 +1,1 @@
+<%- include('_header', { title: note.title }) %><article class="note detail-note"><div class="eyebrow">NOTA PRIVADA</div><div class="note-date"><%= new Date(note.createdAt).toLocaleDateString('es') %></div><h1><%= note.title %></h1><p class="note-body"><%= note.body %></p><a class="text-link" href="/notes">← Volver a mis notas</a></article><%- include('_footer') %>

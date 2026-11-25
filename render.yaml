@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: securevault
+    runtime: node
+    plan: free
+    region: virginia
+    branch: main
+    buildCommand: npm ci
+    startCommand: npm start
+    autoDeployTrigger: "off"
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DATABASE_URL
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: DATA_ENCRYPTION_KEY
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: MAIL_FROM
+        sync: false

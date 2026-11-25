@@ -1,0 +1,3 @@
+<%- include('_header', { title: 'Recuperar contraseña' }) %>
+<section class="form-card"><div class="eyebrow">RECUPERACIÓN SEGURA</div><h1>Recuperar contraseña</h1><p class="muted">Te enviaremos un enlace de un solo uso que vence en 15 minutos.</p><% if (message) { %><div class="success" role="status"><%= message %></div><% } %><form method="post" action="/forgot-password" class="stack"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><label>Correo<input type="email" name="email" autocomplete="email" required></label><button class="button" type="submit">Enviar instrucciones</button></form></section>
+<%- include('_footer') %>

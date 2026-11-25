@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Bloc privado SecureVault"><title><%= title %> · SecureVault</title><link rel="stylesheet" href="/styles.css"></head>
+<body><header class="topbar"><a class="brand" href="/">SecureVault<span>●</span></a><nav aria-label="Navegación principal">
+<% if (currentUser) { %><a href="/notes">Mis notas</a><a href="/profile">Perfil</a><% if (currentUser.role === 'admin') { %><a href="/admin">Administración</a><% } %><form class="inline" method="post" action="/logout"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="nav-button" type="submit">Salir</button></form><% } else { %><a href="/login">Iniciar sesión</a><a class="nav-cta" href="/register">Crear cuenta</a><% } %>
+</nav></header><main class="shell">
